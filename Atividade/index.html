@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Base</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Cabeçalho com botão de Login/Cadastro -->
+    <header class="header">
+        <img class="logo"    src="DALL·E 2024-11-12 23.32.11 - A logo for an Italian restaurant called 'Tutto Italia'. The design should feature a classic, elegant and timeless feel, incorporating elements of Ital.png" alt="">
+        <button class="login-button" onclick="openModal()">Login/Cadastro</button>
+        
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Bem-vindo ao Tutto Italia!</h2>
+            <p>Cada prato, uma viagem pela Itália.</p>
+            <br>
+            <br>
+            <a href="#services" class="btn">Conheça Nossos Serviços</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container1">
+            <h2>Sobre Nós</h2>
+            <p>No Tutto Italia, trazemos a autêntica experiência italiana ao seu prato. Fundado por apaixonados pela cultura e pela gastronomia da Itália, nosso restaurante oferece receitas tradicionais preparadas com ingredientes frescos e selecionados. Cada refeição é uma viagem pelos sabores italianos, do Norte ao Sul, em um ambiente acolhedor e familiar. Venha se sentir parte da nossa família e descubra o verdadeiro sabor da Itália, onde cada visita se torna uma experiência inesquecível.</p>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Serviços</h2>
+            <div class="service">
+                <img src="istockphoto-1284623175-612x612.jpg" alt="Entrega Rápida">
+                <h3>Entrega Rápida</h3>
+                <p>Receba seus pedidos no menor tempo possível.</p>
+            </div>
+            <div class="service">
+                <img src="brusqueta_italiana_culinaria_italiana_Duo_Gourmet-scaled-1.webp" alt="Qualidade Garantida">
+                <h3>Qualidade Garantida</h3>
+                <p>Serviços de alta qualidade para sua satisfação.</p>
+            </div>
+            <div class="service">
+                <img src="atendente-1024x683.jpg" alt="Suporte 24/7">
+                <h3>Suporte 24/7</h3>
+                <p>Estamos aqui para ajudar sempre que precisar.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Veja nosso cardapio</h2>
+            <div class="testimonial">
+               <a href="Cardapio.html"><button  class="btn">Cardapio</button></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container2">
+            <h2>Contato</h2>
+            <form action="/enviar-contato" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="mensagem">Mensagem:</label><br>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br>
+                <button type="submit" class="btn2">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="final">
+            <p>&copy; 2024 Tutto Italia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Cadastro -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Cadastro</h2>
+            <form id="cadastroForm">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" required>
+                
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" name="cpf" required>
+                
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required>
+                
+               <a href="pagina.html"><button type="submit">Completar Cadastro</button></a>       
+            </form>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

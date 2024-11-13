@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cardapio.css">
+</head>
+<body>
+    <header>
+        <h1>Busque Seus Produtos</h1>
+    </header>
+    <main>
+        <section class="search-section">
+            <div class="container">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Digite o nome do produto...">
+                    <button onclick="search()">Buscar</button>
+                </div>
+                <div class="results" id="results">
+                    <!-- Os resultados da busca serão exibidos aqui -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const products = [
+        {  name: 'Shimeji na chapa', description: 'Descrição', price: 'R$ 35,00',image: 'image 15.png' },
+            { name: 'Hossomaki', description: 'Descrição ', price: 'R$ 40,00',image:'image 27.png' },
+            { name: 'Harumaki', description: 'Descrição ', price: 'R$ 20,00',image:'image 22.png' },
+            { name: 'Temaki', description: 'Descrição ', price: 'R$ 40,00',image:'image 21.png' },
+            { name: 'Lámen', description: 'Descrição ', price: 'R$ 33,00',image:'image 26.png' },
+            { name: 'Yakissoba', description: 'Descrição ', price: 'R$ 45,00',image:'image 25.png' },
+            { name: 'Robata', description: 'Descrição ', price: 'R$ 33,05',image:'image 24.png' },
+            { name: 'Hot Roll', description: 'Descrição ', price: 'R$ 30,00',image:'image 23.png' },
+            { name: 'Sashimi', description: 'Descrição ', price: 'R$ 24,70' ,image:'image 18.png'},
+            { name: 'Teppan', description: 'Descrição ', price: 'R$ 34,00',image:'teppan.jpg' },
+            { name: 'Missoshiru', description: 'Descrição ', price: 'R$ 37,90',image:'missoshiru.jpg' },
+            { name: 'Sushi', description: 'Descrição ', price: 'R$ 60,00',image:'sushi.jpg' },
+            { name: 'Tempurá', description: 'Descrição ', price: 'R$ 60,50',image:'tempura.jpg' },
+        ];
+
+        function search() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const resultsDiv = document.getElementById('results');
+
+            resultsDiv.innerHTML = '';
+
+            const filteredProducts = products.filter(product =>
+                product.name.toLowerCase().includes(query) ||
+                product.description.toLowerCase().includes(query)
+            );
+
+            if (filteredProducts.length === 0) {
+                resultsDiv.innerHTML = '<p>Nenhum produto encontrado.</p>';
+            } else {
+                filteredProducts.forEach(product => {
+                    const productDiv = document.createElement('div');
+                    productDiv.classList.add('product');
+                    productDiv.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}" class="product-image">
+                        <div class="product-info">
+                            <h2>${product.name}</h2>
+                            <p>${product.description}</p>
+                            <p><strong>Preço:</strong> ${product.price}</p>
+                        </div>
+                    `;
+                    resultsDiv.appendChild(productDiv);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
